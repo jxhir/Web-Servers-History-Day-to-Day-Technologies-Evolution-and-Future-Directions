@@ -1,0 +1,228 @@
+:root {
+    --bg-primary: #f8f9fa;
+    --bg-surface: #ffffff;
+    --text-main: #212529;
+    --text-muted: #495057;
+    --accent-color: #007bff;
+    --accent-hover: #0056b3;
+    --border-color: #dee2e6;
+    --footer-bg: #343a40;
+    --footer-text: #f8f9fa;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 1. ELEMENT SELECTOR TYPE DEMONSTRATION */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   NAVIGATION BAR HEADER (IMPLEMENTING FLEXBOX)
+   ========================================================================== */
+header {
+    background-color: var(--bg-surface);
+    border-bottom: 2px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav ul {
+    display: flex;                /* REQUIRED: Layout implementation using Flexbox */
+    justify-content: center;
+    list-style: none;
+    padding: 15px 0;
+}
+
+.main-nav li {
+    margin: 0 15px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;    /* Smooth transitions for interactive hover effects */
+}
+
+/* REQUIRED: Hover state design on interactive link parameters */
+.main-nav a:hover {
+    color: var(--bg-surface);
+    background-color: var(--accent-color);
+}
+
+.main-nav a.active {
+    color: var(--bg-surface);
+    background-color: var(--text-main);
+}
+
+/* ==========================================================================
+   2. CLASS SELECTOR DEMONSTRATIONS (LAYOUT & WRAPPERS)
+   ========================================================================== */
+.content-wrapper {
+    flex: 1;
+    width: 100%;
+    max-width: 960px;
+    margin: 40px auto;          /* Explicit Margin utilization */
+    padding: 0 20px;            /* Explicit Padding utilization */
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: var(--text-main);
+    font-size: 2.2rem;
+}
+
+p {
+    margin-bottom: 15px;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   GRID LAYOUT DEMONSTRATION (KEY CONCEPTS CARD SYSTEM)
+   ========================================================================== */
+.concepts-grid {
+    display: grid;              /* REQUIRED: Layout implementation using CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color); /* Explicit Border properties utilization */
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   TABLE DESIGN ARCHITECTURE
+   ========================================================================== */
+.tech-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background-color: var(--bg-surface);
+}
+
+.tech-table th, .tech-table td {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.tech-table th {
+    background-color: var(--text-main);
+    color: var(--bg-surface);
+}
+
+.tech-table tr:nth-child(even) {
+    background-color: var(--bg-primary);
+}
+
+/* ==========================================================================
+   LISTS & HOMEPAGE BOXES
+   ========================================================================== */
+.toc-box {
+    background-color: var(--bg-surface);
+    border-left: 4px solid var(--accent-color);
+    padding: 20px;
+    margin: 30px 0;
+}
+
+.toc-list, .timeline-list, .resource-list {
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+.toc-list li, .timeline-list li, .resource-list li {
+    margin-bottom: 12px;
+}
+
+.resource-list a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.resource-list a:hover {
+    text-decoration: underline;
+    color: var(--accent-hover);
+}
+
+/* ==========================================================================
+   3. ID SELECTOR DEMONSTRATION
+   ========================================================================== */
+#special-note-box {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    color: #856404;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 25px;
+}
+
+/* ==========================================================================
+   UNIVERSAL FOOTER CONFIGURATION
+   ========================================================================== */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+footer a {
+    color: #ffc107;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+/* ==========================================================================
+   ABOUT PAGE PROFILE PICTURE STYLING
+   ========================================================================== */
+.profile-pic {
+    display: block;
+    width: 350px;         /* Sets a clean, professional width */
+    height: 200px;        /* Matches width to keep it perfectly square */
+    object-fit: cover;    /* Prevents the image from stretching or distorting */
+    margin: 0 auto 20px auto; /* Centers the image and adds space beneath it */
+    border: 3px solid var(--border-color); /* Adds a subtle frame around the photo */
+}
+
+/* ==========================================================================
+   HISTORY PAGE IMAGE STYLING
+   ========================================================================== */
+.history-pic {
+    display: block;
+    width: 40%;          /* Allows it to be fully responsive */
+    max-width: 600px;     /* Prevents it from getting too large on desktop screens */
+    height: auto;         /* Keeps the original aspect ratio with no squishing */
+    border-radius: 6px;   /* Subtle rounded corners to match the concept cards */
+    margin: 25px auto;    /* Centers the image and adds clean spacing above and below */
+    border: 1px solid var(--border-color); /* Clean bounding border */
+    /* box-shadow: 0 4px 6px rgba(0,0,0,0.05); */ /* Soft shadow for depth */
+}

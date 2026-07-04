@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Server Technologies</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="tech.html" class="active">Technologies</a></li>
+                <li><a href="concepts.html">Key Concepts</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-wrapper">
+        <h1>Dominant Modern Web Server Technologies</h1>
+        <p>Different architectures excel at different workloads. Below is a structural breakdown of the major platforms active on the modern internet:</p>
+        
+        <table class="tech-table">
+            <thead>
+                <tr>
+                    <th>Server Technology</th>
+                    <th>Core Architecture Type</th>
+                    <th>Primary Strengths</th>
+                    <th>Common Deployment Use-Case</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Apache HTTP Server</strong></td>
+                    <td>Process/Thread-based (Modular)</td>
+                    <td>Dynamic file configuration (.htaccess), vast module library</td>
+                    <td>Shared hosting environments, traditional legacy apps</td>
+                </tr>
+                <tr>
+                    <td><strong>Nginx</strong></td>
+                    <td>Asynchronous / Event-driven</td>
+                    <td>Ultra-low memory footprint, high concurrency limits</td>
+                    <td>Reverse proxying, load balancing, static file delivery</td>
+                </tr>
+                <tr>
+                    <td><strong>LiteSpeed</strong></td>
+                    <td>Event-driven (Apache Compatible)</td>
+                    <td>High speed, drop-in Apache replacement, built-in caching</td>
+                    <td>High-traffic WordPress hosting platforms</td>
+                </tr>
+                <tr>
+                    <td><strong>Microsoft IIS</strong></td>
+                    <td>Thread-pooled (Windows Ecosystem)</td>
+                    <td>Native .NET integration, robust GUI GUI management console</td>
+                    <td>Windows Server corporate enterprise environments</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>This site is a class project for IT 3203. View the <a href="https://ksuweb.github.io/IT3203/" target="_blank">Class Website</a>.</p>
+    </footer>
+</body>
+</html>
