@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security & Protocols - Web Systems</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="architecture.html">Architecture</a></li>
+                <li><a href="security.html" class="active">Security & Protocols</a></li>
+                 <li><a href="history.html">History</a></li>
+                 <li><a href="tech.html">Technologies</a></li>
+                <li><a href="concepts.html">Key Concepts</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-wrapper">
+        <section class="topology">
+            <h2>Microservices, Edge Computing, and Infrastructure Complexity</h2>
+            <p>In the early days of the web, a server was a single physical machine serving flat files. Today, the concept of a web server has mutated into an intricate, multi-layered ecosystem designed to handle unprecedented global traffic. Modern architectures segment tasks across specialized infrastructure layers to optimize performance, manage high concurrency limits, and prevent single points of failure across applications.Simultaneously, edge computing has completely rewritten how data moves across networks. By deploying lightweight proxy nodes globally, providers can process application logic and serve dynamic content directly from data centers physically closest to the end user. This edge ecosystem completely bypasses long network routing trips back to a centralized origin cloud database, reducing web load latency down to single-digit milliseconds and ensuring high performance for mobile consumers worldwide.</p>
+            
+   
+        <section class="evolution">
+            <h2>Evolution and Emerging Protocol Horizons</h2>
+            <p>The historical trajectory of web servers highlights a continuous battle against resource constraints. Early thread-per-connection architectures struggled immensely with the "C10K problem"—the structural inability of a physical server to scale past 10,000 concurrent active connections due to physical memory limitations. This performance wall catalyzed the modern industry shift toward asynchronous, event-driven loop engines like Nginx and Caddy runtime environments.</p>
+            
+            <p>Today, web infrastructure stands on the precipice of another massive evolutionary leap with the widespread adoption of HTTP/3. Built over the UDP-based QUIC protocol rather than traditional TCP, HTTP/3 eliminates head-of-line blocking to drastically improve connection speeds and handshake times on unstable mobile networks. Simultaneously, the integration of artificial intelligence is introducing predictive server automation, allowing modern systems to dynamically scale cloud assets, optimize request routing paths, and detect anomalous zero-day network security threats autonomously in real-time.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>This site is a class project for IT 3203. View the <a href="https://ksuweb.github.io/IT3203/" target="_blank">Class Website</a>.</p>
+    </footer>
+    <script src="quiz.js"></script>
+</body>
+</html>

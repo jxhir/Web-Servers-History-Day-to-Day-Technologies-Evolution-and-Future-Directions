@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Architectures - Web Systems</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="architecture.html" class="active">Architecture</a></li>
+                <li><a href="security.html">Security & Protocols</a></li>
+                 <li><a href="history.html">History</a></li>
+                 <li><a href="tech.html">Technologies</a></li>
+                <li><a href="concepts.html">Key Concepts</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-wrapper">
+        <h1>Web Server Core Architectures</h1>
+
+        <section class="architecture-types">
+            <h2>Process-Driven vs. Event-Driven Core Engines</h2>
+            <p>The internal engineering of a web server determines how it allocates CPU scheduling memory to handle incoming user traffic. Traditional web daemons, such as the Apache HTTP Server, historically leveraged a thread-per-connection model. Under this paradigm, every incoming socket connection requires a dedicated operating system thread or process. While this isolation ensures that a failure in one request thread cannot crash another, it creates linear memory scaling constraints. If an individual thread consumes 50MB of RAM, hosting 1,000 concurrent connections demands a massive 50GB of memory allocation, frequently causing physical servers to crash from resource exhaustion during traffic spikes.</p>
+            
+            <p>To overcome these scaling limitations, modern infrastructure shifted toward asynchronous, event-driven loops. Platforms like Nginx run a small, set number of worker processes that sit on a continuous event loop, processing incoming network events across thousands of shared connections simultaneously using non-blocking I/O operations. This design means that thousands of concurrent users share the same system memory pool, keeping memory footprints flat and stable even during aggressive traffic spikes or automated traffic bursts.</p>
+        </section>
+
+        <section class="resource-allocation">
+            <h2>Resource Allocation and Request Scheduling</h2>
+            <p>Beneath the software runtime architecture lies the complex physical task of CPU core allocation. When a thread-based web server runs on multi-core hardware, the operating system kernel must constantly execute context switches to move different threads onto physical CPU cores. Every context switch incurs a performance penalty, as the CPU must save the register state of the current thread, flush the CPU cache lines, and load the memory address space of the incoming thread. As connection concurrency scales upward into the thousands, the system spends more computational energy switching between tasks than it does serving actual data.</p>
+            
+            <p>Asynchronous event loops bypass this overhead completely by minimizing context switching. Because worker processes map directly to the number of physical CPU cores and stay bound to them, the system avoids memory state swaps. When a request waits for a disk read or a database query response, the event loop simply registers a callback handler and immediately skips to the next network packet in line. This event-driven scheduling architecture turns raw hardware into an incredibly efficient engine, maximizing network data throughput with near-zero idle CPU cycles.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>This site is a class project for IT 3203. View the <a href="https://ksuweb.github.io/IT3203/" target="_blank">Class Website</a>.</p>
+    </footer>
+    <script src="quiz.js"></script>
+</body>
+</html>
