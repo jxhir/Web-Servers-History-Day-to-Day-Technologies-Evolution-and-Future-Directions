@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Server Concepts - Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="architecture.html">Architecture</a></li>
+                <li><a href="security.html">Security & Protocols</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="tech.html">Technologies</a></li>
+                <li><a href="concepts.html">Key Concepts</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="quiz.html" class="active">Quiz</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content-wrapper">
+        <h1>Concept Self-Assessment Quiz</h1>
+        <p>Test your knowledge on web server infrastructure and core concepts below.</p>
+
+        <form id="quiz-form">
+            
+            <div class="quiz-question" id="q1-container">
+                <h2>1. Fill in the Blank</h2>
+                <label for="q1">What does the "S" in HTTPS stand for?</label>
+                <input type="text" id="q1" name="q1" placeholder="Your answer here..." required>
+                <div class="feedback" id="q1-feedback"></div>
+            </div>
+
+            <div class="quiz-question" id="q2-container">
+                <h2>2. Multiple Choice</h2>
+                <p>Which system translates human-readable domains (like website.com) into IP addresses?</p>
+                <label><input type="radio" name="q2" value="DNS" required> DNS</label><br>
+                <label><input type="radio" name="q2" value="HTTP"> HTTP</label><br>
+                <label><input type="radio" name="q2" value="RAM"> RAM</label><br>
+                <div class="feedback" id="q2-feedback"></div>
+            </div>
+
+            <div class="quiz-question" id="q3-container">
+                <h2>3. Multiple Choice</h2>
+                <p>What is the main purpose of a Load Balancer?</p>
+                <label><input type="radio" name="q3" value="A" required> To encrypt internet traffic via TLS</label><br>
+                <label><input type="radio" name="q3" value="B"> To store web files permanently</label><br>
+                <label><input type="radio" name="q3" value="C"> To distribute inbound traffic across multiple servers</label><br>
+                <div class="feedback" id="q3-feedback"></div>
+            </div>
+
+            <div class="quiz-question" id="q4-container">
+                <h2>4. Multiple Choice</h2>
+                <p>Where does a Caching Engine temporarily store web data for high-speed access?</p>
+                <label><input type="radio" name="q4" value="RAM" required> High-speed RAM</label><br>
+                <label><input type="radio" name="q4" value="HDD"> Hard Drives (HDD)</label><br>
+                <label><input type="radio" name="q4" value="CPU"> CPU Registers</label><br>
+                <div class="feedback" id="q4-feedback"></div>
+            </div>
+
+            <div class="quiz-question" id="q5-container">
+                <h2>5. Multi-Selection (Select ALL that apply)</h2>
+                <p>Which of the following are common roles of a Reverse Proxy? (Select 2)</p>
+                <label><input type="checkbox" name="q5" value="caching"> Security caching</label><br>
+                <label><input type="checkbox" name="q5" value="obfuscation"> Identity obfuscation/hiding backend servers</label><br>
+                <label><input type="checkbox" name="q5" value="domain"> Registering new domain names</label><br>
+                <div class="feedback" id="q5-feedback"></div>
+            </div>
+
+            <div class="quiz-actions">
+                <button type="submit" id="submit-btn">Submit Quiz</button>
+                <button type="button" id="reset-btn" class="hidden">Retake Quiz</button>
+            </div>
+        </form>
+
+        <div id="results-panel" class="hidden">
+            <h2>Your Results</h2>
+            <div id="score-display"></div>
+            <div id="status-display"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p>This site is a class project for IT 3203. View the <a href="https://ksuweb.github.io/IT3203/" target="_blank" rel="noopener">Class Website</a>.</p>
+    </footer>
+
+    <script src="quiz.js"></script>
+</body>
+</html>
